@@ -1,0 +1,158 @@
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #00aaff, #00ff6c);
+}
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background: rgba(255, 255, 255, 0.75);
+}
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.span-two {
+  grid-column: span 2;
+}
+.output {
+  grid-column: 1 / -1;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 10px;
+}
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+} */
+/* Css starts here... */
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-weight: 600;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #cd993b, #140f08);
+  background: rgba(240, 193, 74, 0.6);
+
+  backdrop-filter: blur(0.1rem);
+}
+/* Use grid for the buttons */
+.calculator-grid {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  transform: translateY(-1rem);
+  min-height: 100%;
+  grid-template-columns: repeat(6, 60px);
+  grid-template-rows: minmax(120px, auto) repeat(9, 60px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: 1px solid rgb(235, 221, 221);
+  outline: none;
+  border-radius: 10%;
+  background: rgba(60, 51, 51, 0.75);
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 9px 9px 9px #cab, inset -9px -9px -9px #a98;
+}
+.span-two {
+  grid-column: span 2;
+  font-size: 2px;
+}
+#active {
+  background-color: rgb(80, 55, 55);
+  color: wheat;
+}
+#active1 {
+  background-color: #d55f20;
+  font-size: 2rem;
+}
+#active:hover {
+  background-color: rgba(88, 124, 153, 0.9);
+}
+#active3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.output {
+  grid-column: 1 / -1;
+  background: rgba(63, 59, 59, 0.75);
+  transform: translateY(-20px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 10px;
+}
+
+.output .previous-operand {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.div {
+  border: 5px #6bc ridge;
+  border-radius: 10px;
+  margin: -4rem 8rem;
+  padding-top: 4rem;
+  transform: translate(35rem, 20%);
+  background: #6bc;
+  width: 25rem;
+  font-size: 11px;
+  box-shadow: inset 10rem 10rem 10rem #cab, inset -10rem -10rem -10rem #a98;
+}
+@media (max-width: 1140px) {
+  .div {
+    border: 5px #6bc ridge;
+    border-radius: 10px;
+    margin: -4rem 8rem;
+    padding-top: 4rem;
+    transform: translate(2rem, 8rem);
+    background: #6bc;
+    width: 25rem;
+    font-size: 11px;
+    box-shadow: inset 10rem 10rem 10rem #cab, inset -10rem -10rem -10rem #a98;
+  }
+}
